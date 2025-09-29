@@ -16,3 +16,4 @@ COPY --from=builder /gomcp /usr/local/bin/
 RUN mkdir "/root/.config/"
 RUN ["/usr/local/bin/gomcp", "download"]
 CMD ["gomcp", "-api-addr", "0.0.0.0:8081", "sse"]
+EXPOSE 8081
