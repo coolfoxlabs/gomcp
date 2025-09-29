@@ -12,5 +12,6 @@ FROM debian:bookworm
 RUN apt-get update && apt-get -y install ca-certificates
 
 COPY --from=builder /gomcp /usr/local/bin/
+RUN mkdir /root/.config/lightpanda-gomcp
 RUN ["gomcp", "download"]
 CMD ["gomcp", "-api-addr", "0.0.0.0:8081", "sse"]
